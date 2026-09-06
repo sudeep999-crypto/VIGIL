@@ -94,3 +94,24 @@ def summary():
         "total_high_risk": sum(1 for p in PROJECTS if p["risk_score"] >= 65),
         "ministries": rollup,
     }
+
+
+@app.get("/alerts")
+def alerts(limit: int = 10):
+    """
+    Top risk alerts: the highest-risk projects, sorted by risk_score
+    descending. ?limit=25 -> the 25 riskiest projects (default 10).
+    """
+    top = sorted(PROJECTS, key=lambda p: p["risk_score"], reverse=True)
+    selected = [
+        {
+            "project_id": p["project_id"],
+            "project_name": p["project_name"],
+            "ministry": p["ministry"],
+            "sector": p["sector"],
+            "risk_score": p["risk_score"],
+            "risk_brief": p["risk_brief"],
+        }
+        for p in top[: max(0, limit)]
+    ]
+    return {"count": len(selected), "alerts": selected}
