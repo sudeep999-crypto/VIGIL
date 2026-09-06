@@ -53,6 +53,85 @@ FEATURE_LABELS = {
     "progress_vs_expected": "Progress vs schedule expectation",
 }
 
+# Natural-language rendering of each risk reason. Each feature label maps to
+# (phrase when the SHAP impact pushes toward delay, phrase when it pushes
+# toward on-time completion). Neutral features keep the same phrasing either way.
+_RISK_PHRASES = {
+    "Progress vs schedule expectation": (
+        "progress falling behind schedule expectations",
+        "progress running ahead of schedule expectations",
+    ),
+    "Physical progress": ("slow physical completion", "rapid physical completion"),
+    "Schedule pressure": ("high schedule pressure", "low schedule pressure"),
+    "Reporting delay": ("delays in progress reporting", "timely progress reporting"),
+    "Last report gap": ("a long gap since the last status report", "a recent status report"),
+    "Planned project duration": ("a long planned duration", "a short planned duration"),
+    "Time elapsed": ("the time elapsed since work began", "the time elapsed since work began"),
+    "Budget allocated": ("the scale of its budget allocation", "the scale of its budget allocation"),
+    "Budget utilization pace": ("the pace of budget utilization", "the pace of budget utilization"),
+}
+
+
+def _phrase_for_reason(feature, impact):
+    """Render one risk reason (a feature label + its signed SHAP impact) as prose."""
+    if feature.startswith("Sector: "):
+        return f"its classification under {feature[len('Sector: '):]}"
+    if feature.startswith("Ministry: "):
+        return f"its classification under {feature[len('Ministry: '):]}"
+    if feature in _RISK_PHRASES:
+        pos_phrase, neg_phrase = _RISK_PHRASES[feature]
+        if impact >= 0:
+            # a strong delay-pushing gap deserves the stronger wording
+            if feature == "Progress vs schedule expectation" and impact >= 2.0:
+                return "progress falling well behind schedule expectations"
+            return pos_phrase
+        return neg_phrase
+    return f"its {feature.lower()}"
+
+
+def _join_phrases(phrases):
+    """Join prose phrases into a list: 'a, b, and c' (or 'a and b')."""
+    if not phrases:
+        return ""
+    if len(phrases) == 1:
+        return phrases[0]
+    if len(phrases) == 2:
+        return f"{phrases[0]} and {phrases[1]}"
+    return ", ".join(phrases[:-1]) + ", and " + phrases[-1]
+
+
+def generate_brief(project_name, ministry, sector, risk_score, risk_reasons):
+    """Return a single plain-language paragraph summarising why a project is risky.
+
+    risk_score is a percentage (0-100). risk_reasons is a list of dicts, each
+    with "feature" (a human-readable label) and "impact" (its signed SHAP
+    value, where positive means it pushed the model toward delay).
+    """
+    pct = f"{risk_score:g}"
+
+    if risk_score < 30:
+        return (
+            f"{project_name} is currently low-risk ({pct}%), tracking close to or "
+            "ahead of its expected schedule."
+        )
+
+    # Only reasons whose impact pushes toward delay explain *why* a project is
+    # risky. A top-3 reason with a negative impact merely appeared large in the
+    # model but actually lowered risk, so it does not belong in the brief.
+    drivers = [
+        _phrase_for_reason(reason["feature"], reason["impact"])
+        for reason in risk_reasons
+        if reason["impact"] >= 0
+    ]
+    if not drivers:  # defensive — a score >= 30 always has a positive driver
+        drivers = [f"its classification under {sector}"]
+
+    return (
+        f"{project_name} is at {pct}% risk. This is primarily driven by "
+        f"{_join_phrases(drivers)}. Immediate review is recommended."
+    )
+
+
 results = []
 for i, row in df.iterrows():
     project_shap = shap_values[i]
@@ -73,6 +152,11 @@ for i, row in df.iterrows():
             label = feat_name
         reasons.append({"feature": label, "impact": round(float(shap_val), 4)})
 
+    risk_pct = round(float(risk_scores[i]) * 100, 1)  # as a % for the UI
+    brief = generate_brief(
+        row["project_name"], row["ministry"], row["sector"], risk_pct, reasons
+    )
+
     results.append({
         "project_id": row["project_id"],
         "project_name": row["project_name"],
@@ -82,7 +166,8 @@ for i, row in df.iterrows():
         "percent_complete": row["percent_complete"],
         "months_elapsed": row["months_elapsed"],
         "planned_duration_months": row["planned_duration_months"],
-        "risk_score": round(float(risk_scores[i]) * 100, 1),  # as a % for the UI
+        "risk_score": risk_pct,
+        "risk_brief": brief,
         "risk_reasons": reasons,
     })
 
