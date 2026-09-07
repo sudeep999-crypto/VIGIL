@@ -13,9 +13,43 @@ useful for judges AND for debugging before the frontend is even connected.
 """
 
 import json
+import os
 from collections import defaultdict
-from fastapi import FastAPI, HTTPException
+
+from dotenv import load_dotenv
+from fastapi import Body, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from groq import Groq
+
+# --- LLM chat assistant setup -------------------------------------------
+# load_dotenv() reads a .env file (if present) into environment variables,
+# so GROQ_API_KEY can live outside the code. Create a .env file next to
+# main.py containing:  GROQ_API_KEY=gsk_...
+load_dotenv()
+# Guarded so a missing GROQ_API_KEY can never crash the app at startup —
+# the /chat endpoint degrades to its fallback message instead.
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+client = Groq(api_key=GROQ_API_KEY) if GROQ_API_KEY else None
+
+SYSTEM_PROMPT = """\
+You are VIGIL's project assistant. You only answer questions about this \
+specific project: VIGIL, a predictive delay-risk system for infrastructure \
+monitoring built for SIH 2026.
+
+You may ONLY use these facts:
+- Model: XGBoost classifier with 150 trees and max_depth=4. Test accuracy \
+is 94.0% and ROC-AUC is 0.954; however, with data-leakage features removed, \
+accuracy drops to 88.7% and ROC-AUC to 0.918.
+- Recall on delayed projects is 0.83; precision is 0.96.
+- Dataset: 1,981 synthetic infrastructure projects across 15 ministries.
+- Explainability: SHAP TreeExplainer, providing the top-3 reasons per \
+project with signed impact.
+
+Rules:
+- If asked anything NOT about this project, respond exactly: \
+"I can only answer questions about the VIGIL project."
+- Never invent numbers not listed above.
+"""
 
 app = FastAPI(title="VIGIL API")
 
@@ -115,3 +149,34 @@ def alerts(limit: int = 10):
         for p in top[: max(0, limit)]
     ]
     return {"count": len(selected), "alerts": selected}
+
+
+@app.post("/chat")
+def chat(question: str = Body(..., embed=True)):
+    """
+    Natural-language Q&A about the VIGIL project itself, backed by Groq's
+    openai/gpt-oss-20b. The system prompt pins the assistant to verified
+    project facts so it can't hallucinate metrics during the demo.
+    Any Groq failure (network, rate limit, bad key) returns a friendly
+    fallback instead of a 500, so the demo never crashes.
+    """
+    if client is None:
+        return {
+            "answer": "Sorry, I'm having trouble answering right now — "
+            "please check the dashboard directly for project details."
+        }
+    try:
+        completion = client.chat.completions.create(
+            model="openai/gpt-oss-20b",
+            messages=[
+                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "user", "content": question},
+            ],
+            temperature=0.3,
+        )
+        return {"answer": completion.choices[0].message.content}
+    except Exception:
+        return {
+            "answer": "Sorry, I'm having trouble answering right now — "
+            "please check the dashboard directly for project details."
+        }
