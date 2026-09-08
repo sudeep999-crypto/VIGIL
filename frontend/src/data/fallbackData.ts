@@ -2,8 +2,9 @@ import type { SummaryResponse, AlertItem, Project } from '../api/client';
 import fallbackProjectsJson from './fallbackProjects.json';
 
 export const FALLBACK_SUMMARY: SummaryResponse = {
-  total_projects: 1981,
-  total_high_risk: 518,
+  // Curated demo subset of 50 projects for offline fallback resilience
+  total_projects: 50,
+  total_high_risk: 18,
   ministries: [
     { ministry: 'Railways', project_count: 180, avg_risk: 37.9, high_risk_count: 66 },
     { ministry: 'Petroleum & Natural Gas', project_count: 173, avg_risk: 33.6, high_risk_count: 55 },
