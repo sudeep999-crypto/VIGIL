@@ -1,0 +1,1302 @@
+[
+  {
+    "project_id": "PRJ-00001",
+    "project_name": "Mineral exploration project 1",
+    "ministry": "Mines",
+    "sector": "Mineral exploration",
+    "budget_allocated_cr": 127.2,
+    "percent_complete": 96.5,
+    "months_elapsed": 14,
+    "planned_duration_months": 15,
+    "risk_score": 0.2,
+    "risk_brief": "Mineral exploration project 1 is currently low-risk (0.2%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Physical progress",
+        "impact": -3.8081
+      },
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": -1.3804
+      },
+      {
+        "feature": "Budget allocated",
+        "impact": -0.4326
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00002",
+    "project_name": "Rural water supply project 2",
+    "ministry": "Jal Shakti",
+    "sector": "Rural water supply",
+    "budget_allocated_cr": 95.85,
+    "percent_complete": 33.4,
+    "months_elapsed": 23,
+    "planned_duration_months": 40,
+    "risk_score": 99.6,
+    "risk_brief": "Rural water supply project 2 is at 99.6% risk. This is primarily driven by progress falling well behind schedule expectations, slow physical completion, and its classification under Rural water supply. Immediate review is recommended.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": 4.3303
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 1.9603
+      },
+      {
+        "feature": "Sector: Rural water supply",
+        "impact": 0.297
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00003",
+    "project_name": "Metro rail project 3",
+    "ministry": "Railways",
+    "sector": "Metro rail",
+    "budget_allocated_cr": 91.34,
+    "percent_complete": 24.7,
+    "months_elapsed": 56,
+    "planned_duration_months": 25,
+    "risk_score": 99.9,
+    "risk_brief": "Metro rail project 3 is at 99.9% risk. This is primarily driven by progress falling well behind schedule expectations, slow physical completion, and high schedule pressure. Immediate review is recommended.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": 4.6778
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 1.7721
+      },
+      {
+        "feature": "Schedule pressure",
+        "impact": 0.9911
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00004",
+    "project_name": "Irrigation canals project 4",
+    "ministry": "Agriculture",
+    "sector": "Irrigation canals",
+    "budget_allocated_cr": 26.73,
+    "percent_complete": 95.8,
+    "months_elapsed": 57,
+    "planned_duration_months": 81,
+    "risk_score": 23.8,
+    "risk_brief": "Irrigation canals project 4 is currently low-risk (23.8%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": 1.6698
+      },
+      {
+        "feature": "Physical progress",
+        "impact": -0.9572
+      },
+      {
+        "feature": "Schedule pressure",
+        "impact": -0.9445
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00005",
+    "project_name": "Bridges project 5",
+    "ministry": "Road Transport & Highways",
+    "sector": "Bridges",
+    "budget_allocated_cr": 14.94,
+    "percent_complete": 69.9,
+    "months_elapsed": 46,
+    "planned_duration_months": 66,
+    "risk_score": 5.7,
+    "risk_brief": "Bridges project 5 is currently low-risk (5.7%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": -2.1305
+      },
+      {
+        "feature": "Sector: Bridges",
+        "impact": 1.425
+      },
+      {
+        "feature": "Time elapsed",
+        "impact": -0.4887
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00006",
+    "project_name": "State highways project 6",
+    "ministry": "Road Transport & Highways",
+    "sector": "State highways",
+    "budget_allocated_cr": 17.67,
+    "percent_complete": 40.4,
+    "months_elapsed": 8,
+    "planned_duration_months": 23,
+    "risk_score": 0.3,
+    "risk_brief": "State highways project 6 is currently low-risk (0.3%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": -2.7518
+      },
+      {
+        "feature": "Time elapsed",
+        "impact": -0.9271
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 0.6552
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00007",
+    "project_name": "Transmission lines project 7",
+    "ministry": "Power",
+    "sector": "Transmission lines",
+    "budget_allocated_cr": 87.49,
+    "percent_complete": 39.9,
+    "months_elapsed": 22,
+    "planned_duration_months": 76,
+    "risk_score": 4.1,
+    "risk_brief": "Transmission lines project 7 is currently low-risk (4.1%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": -3.0158
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 0.9871
+      },
+      {
+        "feature": "Time elapsed",
+        "impact": 0.3158
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00008",
+    "project_name": "Steel plant expansion project 8",
+    "ministry": "Steel",
+    "sector": "Steel plant expansion",
+    "budget_allocated_cr": 17.96,
+    "percent_complete": 5.0,
+    "months_elapsed": 8,
+    "planned_duration_months": 83,
+    "risk_score": 0.4,
+    "risk_brief": "Steel plant expansion project 8 is currently low-risk (0.4%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": -2.4444
+      },
+      {
+        "feature": "Time elapsed",
+        "impact": -0.6478
+      },
+      {
+        "feature": "Budget allocated",
+        "impact": -0.5551
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00009",
+    "project_name": "Transmission lines project 9",
+    "ministry": "Power",
+    "sector": "Transmission lines",
+    "budget_allocated_cr": 101.63,
+    "percent_complete": 67.5,
+    "months_elapsed": 55,
+    "planned_duration_months": 81,
+    "risk_score": 2.3,
+    "risk_brief": "Transmission lines project 9 is currently low-risk (2.3%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": -2.5387
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 0.4046
+      },
+      {
+        "feature": "Schedule pressure",
+        "impact": -0.3057
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00010",
+    "project_name": "Gas pipelines project 10",
+    "ministry": "Petroleum & Natural Gas",
+    "sector": "Gas pipelines",
+    "budget_allocated_cr": 142.13,
+    "percent_complete": 33.8,
+    "months_elapsed": 21,
+    "planned_duration_months": 69,
+    "risk_score": 1.9,
+    "risk_brief": "Gas pipelines project 10 is currently low-risk (1.9%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": -2.7209
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 0.889
+      },
+      {
+        "feature": "Sector: Gas pipelines",
+        "impact": -0.8119
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00011",
+    "project_name": "Solar parks project 11",
+    "ministry": "New & Renewable Energy",
+    "sector": "Solar parks",
+    "budget_allocated_cr": 102.58,
+    "percent_complete": 22.9,
+    "months_elapsed": 25,
+    "planned_duration_months": 12,
+    "risk_score": 99.9,
+    "risk_brief": "Solar parks project 11 is at 99.9% risk. This is primarily driven by progress falling well behind schedule expectations, slow physical completion, and high schedule pressure. Immediate review is recommended.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": 4.6105
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 1.6175
+      },
+      {
+        "feature": "Schedule pressure",
+        "impact": 0.969
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00012",
+    "project_name": "Thermal power project 12",
+    "ministry": "Power",
+    "sector": "Thermal power",
+    "budget_allocated_cr": 197.4,
+    "percent_complete": 64.5,
+    "months_elapsed": 54,
+    "planned_duration_months": 66,
+    "risk_score": 83.3,
+    "risk_brief": "Thermal power project 12 is at 83.3% risk. This is primarily driven by progress falling behind schedule expectations and slow physical completion. Immediate review is recommended.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": 1.4233
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 0.8996
+      },
+      {
+        "feature": "Sector: Thermal power",
+        "impact": -0.2393
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00013",
+    "project_name": "Smart city infra project 13",
+    "ministry": "Housing & Urban Affairs",
+    "sector": "Smart city infra",
+    "budget_allocated_cr": 63.65,
+    "percent_complete": 86.3,
+    "months_elapsed": 25,
+    "planned_duration_months": 31,
+    "risk_score": 0.5,
+    "risk_brief": "Smart city infra project 13 is currently low-risk (0.5%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": -2.7071
+      },
+      {
+        "feature": "Physical progress",
+        "impact": -1.0278
+      },
+      {
+        "feature": "Ministry: Housing & Urban Affairs",
+        "impact": 0.3734
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00014",
+    "project_name": "Transmission lines project 14",
+    "ministry": "Power",
+    "sector": "Transmission lines",
+    "budget_allocated_cr": 215.85,
+    "percent_complete": 98.0,
+    "months_elapsed": 71,
+    "planned_duration_months": 55,
+    "risk_score": 0.3,
+    "risk_brief": "Transmission lines project 14 is currently low-risk (0.3%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Physical progress",
+        "impact": -7.5369
+      },
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": 2.0101
+      },
+      {
+        "feature": "Schedule pressure",
+        "impact": 0.5154
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00015",
+    "project_name": "Rail track doubling project 15",
+    "ministry": "Railways",
+    "sector": "Rail track doubling",
+    "budget_allocated_cr": 23.31,
+    "percent_complete": 32.3,
+    "months_elapsed": 12,
+    "planned_duration_months": 60,
+    "risk_score": 1.0,
+    "risk_brief": "Rail track doubling project 15 is currently low-risk (1%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": -2.7956
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 0.7339
+      },
+      {
+        "feature": "Schedule pressure",
+        "impact": -0.4673
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00016",
+    "project_name": "Rail track doubling project 16",
+    "ministry": "Railways",
+    "sector": "Rail track doubling",
+    "budget_allocated_cr": 396.8,
+    "percent_complete": 39.9,
+    "months_elapsed": 30,
+    "planned_duration_months": 56,
+    "risk_score": 94.2,
+    "risk_brief": "Rail track doubling project 16 is at 94.2% risk. This is primarily driven by slow physical completion, progress falling behind schedule expectations, and the time elapsed since work began. Immediate review is recommended.",
+    "risk_reasons": [
+      {
+        "feature": "Physical progress",
+        "impact": 1.7265
+      },
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": 1.426
+      },
+      {
+        "feature": "Time elapsed",
+        "impact": 0.4443
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00017",
+    "project_name": "Steel plant expansion project 17",
+    "ministry": "Steel",
+    "sector": "Steel plant expansion",
+    "budget_allocated_cr": 98.0,
+    "percent_complete": 98.0,
+    "months_elapsed": 24,
+    "planned_duration_months": 17,
+    "risk_score": 0.2,
+    "risk_brief": "Steel plant expansion project 17 is currently low-risk (0.2%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Physical progress",
+        "impact": -7.1142
+      },
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": 1.7607
+      },
+      {
+        "feature": "Schedule pressure",
+        "impact": 0.4381
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00018",
+    "project_name": "Coal mining infra project 18",
+    "ministry": "Coal",
+    "sector": "Coal mining infra",
+    "budget_allocated_cr": 120.16,
+    "percent_complete": 98.0,
+    "months_elapsed": 43,
+    "planned_duration_months": 27,
+    "risk_score": 0.2,
+    "risk_brief": "Coal mining infra project 18 is currently low-risk (0.2%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Physical progress",
+        "impact": -7.3276
+      },
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": 1.7117
+      },
+      {
+        "feature": "Last report gap",
+        "impact": 0.4999
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00019",
+    "project_name": "Refineries project 19",
+    "ministry": "Petroleum & Natural Gas",
+    "sector": "Refineries",
+    "budget_allocated_cr": 5.5,
+    "percent_complete": 46.2,
+    "months_elapsed": 11,
+    "planned_duration_months": 82,
+    "risk_score": 91.5,
+    "risk_brief": "Refineries project 19 is at 91.5% risk. This is primarily driven by progress falling well behind schedule expectations and slow physical completion. Immediate review is recommended.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": 3.7396
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 0.5455
+      },
+      {
+        "feature": "Reporting delay",
+        "impact": -0.3117
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00020",
+    "project_name": "Urban housing project 20",
+    "ministry": "Housing & Urban Affairs",
+    "sector": "Urban housing",
+    "budget_allocated_cr": 124.1,
+    "percent_complete": 51.8,
+    "months_elapsed": 63,
+    "planned_duration_months": 58,
+    "risk_score": 99.8,
+    "risk_brief": "Urban housing project 20 is at 99.8% risk. This is primarily driven by progress falling well behind schedule expectations, slow physical completion, and high schedule pressure. Immediate review is recommended.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": 4.5484
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 1.5954
+      },
+      {
+        "feature": "Schedule pressure",
+        "impact": 0.9067
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00021",
+    "project_name": "Solar parks project 21",
+    "ministry": "New & Renewable Energy",
+    "sector": "Solar parks",
+    "budget_allocated_cr": 294.62,
+    "percent_complete": 98.0,
+    "months_elapsed": 19,
+    "planned_duration_months": 20,
+    "risk_score": 0.1,
+    "risk_brief": "Solar parks project 21 is currently low-risk (0.1%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Physical progress",
+        "impact": -4.1302
+      },
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": -1.216
+      },
+      {
+        "feature": "Budget allocated",
+        "impact": -0.5282
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00022",
+    "project_name": "State highways project 22",
+    "ministry": "Road Transport & Highways",
+    "sector": "State highways",
+    "budget_allocated_cr": 21.22,
+    "percent_complete": 98.0,
+    "months_elapsed": 51,
+    "planned_duration_months": 41,
+    "risk_score": 0.2,
+    "risk_brief": "State highways project 22 is currently low-risk (0.2%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Physical progress",
+        "impact": -7.3274
+      },
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": 1.8849
+      },
+      {
+        "feature": "Schedule pressure",
+        "impact": 0.7542
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00023",
+    "project_name": "Urban housing project 23",
+    "ministry": "Housing & Urban Affairs",
+    "sector": "Urban housing",
+    "budget_allocated_cr": 8.88,
+    "percent_complete": 24.5,
+    "months_elapsed": 11,
+    "planned_duration_months": 41,
+    "risk_score": 0.7,
+    "risk_brief": "Urban housing project 23 is currently low-risk (0.7%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": -2.8581
+      },
+      {
+        "feature": "Time elapsed",
+        "impact": -0.8084
+      },
+      {
+        "feature": "Ministry: Housing & Urban Affairs",
+        "impact": 0.6777
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00024",
+    "project_name": "Rail track doubling project 24",
+    "ministry": "Railways",
+    "sector": "Rail track doubling",
+    "budget_allocated_cr": 40.26,
+    "percent_complete": 70.2,
+    "months_elapsed": 32,
+    "planned_duration_months": 47,
+    "risk_score": 2.2,
+    "risk_brief": "Rail track doubling project 24 is currently low-risk (2.2%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": -2.6546
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 0.3613
+      },
+      {
+        "feature": "Schedule pressure",
+        "impact": -0.2914
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00025",
+    "project_name": "Coal mining infra project 25",
+    "ministry": "Coal",
+    "sector": "Coal mining infra",
+    "budget_allocated_cr": 89.63,
+    "percent_complete": 91.6,
+    "months_elapsed": 49,
+    "planned_duration_months": 58,
+    "risk_score": 0.3,
+    "risk_brief": "Coal mining infra project 25 is currently low-risk (0.3%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": -2.4792
+      },
+      {
+        "feature": "Physical progress",
+        "impact": -0.9935
+      },
+      {
+        "feature": "Time elapsed",
+        "impact": -0.3599
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00026",
+    "project_name": "Thermal power project 26",
+    "ministry": "Power",
+    "sector": "Thermal power",
+    "budget_allocated_cr": 361.12,
+    "percent_complete": 64.3,
+    "months_elapsed": 31,
+    "planned_duration_months": 57,
+    "risk_score": 0.8,
+    "risk_brief": "Thermal power project 26 is currently low-risk (0.8%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": -3.2044
+      },
+      {
+        "feature": "Sector: Thermal power",
+        "impact": -0.3904
+      },
+      {
+        "feature": "Budget allocated",
+        "impact": -0.3745
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00027",
+    "project_name": "Transmission lines project 27",
+    "ministry": "Power",
+    "sector": "Transmission lines",
+    "budget_allocated_cr": 97.61,
+    "percent_complete": 82.3,
+    "months_elapsed": 52,
+    "planned_duration_months": 46,
+    "risk_score": 97.9,
+    "risk_brief": "Transmission lines project 27 is at 97.9% risk. This is primarily driven by progress falling well behind schedule expectations and high schedule pressure. Immediate review is recommended.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": 4.2031
+      },
+      {
+        "feature": "Schedule pressure",
+        "impact": 1.2604
+      },
+      {
+        "feature": "Budget allocated",
+        "impact": -0.2574
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00028",
+    "project_name": "Irrigation canals project 28",
+    "ministry": "Agriculture",
+    "sector": "Irrigation canals",
+    "budget_allocated_cr": 173.27,
+    "percent_complete": 60.4,
+    "months_elapsed": 50,
+    "planned_duration_months": 21,
+    "risk_score": 99.6,
+    "risk_brief": "Irrigation canals project 28 is at 99.6% risk. This is primarily driven by progress falling well behind schedule expectations, slow physical completion, and high schedule pressure. Immediate review is recommended.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": 4.4349
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 1.1818
+      },
+      {
+        "feature": "Schedule pressure",
+        "impact": 0.7699
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00029",
+    "project_name": "Steel plant expansion project 29",
+    "ministry": "Steel",
+    "sector": "Steel plant expansion",
+    "budget_allocated_cr": 194.16,
+    "percent_complete": 27.2,
+    "months_elapsed": 49,
+    "planned_duration_months": 33,
+    "risk_score": 99.5,
+    "risk_brief": "Steel plant expansion project 29 is at 99.5% risk. This is primarily driven by progress falling well behind schedule expectations and slow physical completion. Immediate review is recommended.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": 4.1071
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 1.6649
+      },
+      {
+        "feature": "Ministry: Steel",
+        "impact": -0.84
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00030",
+    "project_name": "Optical fibre network project 30",
+    "ministry": "Telecommunications",
+    "sector": "Optical fibre network",
+    "budget_allocated_cr": 208.99,
+    "percent_complete": 98.0,
+    "months_elapsed": 56,
+    "planned_duration_months": 43,
+    "risk_score": 0.2,
+    "risk_brief": "Optical fibre network project 30 is currently low-risk (0.2%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Physical progress",
+        "impact": -7.5998
+      },
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": 1.9867
+      },
+      {
+        "feature": "Schedule pressure",
+        "impact": 0.5393
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00031",
+    "project_name": "Thermal power project 31",
+    "ministry": "Power",
+    "sector": "Thermal power",
+    "budget_allocated_cr": 150.41,
+    "percent_complete": 23.6,
+    "months_elapsed": 38,
+    "planned_duration_months": 60,
+    "risk_score": 99.7,
+    "risk_brief": "Thermal power project 31 is at 99.7% risk. This is primarily driven by progress falling well behind schedule expectations, slow physical completion, and the scale of its budget allocation. Immediate review is recommended.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": 4.6124
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 1.7168
+      },
+      {
+        "feature": "Budget allocated",
+        "impact": 0.7354
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00032",
+    "project_name": "Rural water supply project 32",
+    "ministry": "Jal Shakti",
+    "sector": "Rural water supply",
+    "budget_allocated_cr": 56.75,
+    "percent_complete": 84.5,
+    "months_elapsed": 69,
+    "planned_duration_months": 83,
+    "risk_score": 1.5,
+    "risk_brief": "Rural water supply project 32 is currently low-risk (1.5%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": -2.6104
+      },
+      {
+        "feature": "Physical progress",
+        "impact": -0.9487
+      },
+      {
+        "feature": "Sector: Rural water supply",
+        "impact": 0.4897
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00033",
+    "project_name": "Irrigation project 33",
+    "ministry": "Jal Shakti",
+    "sector": "Irrigation",
+    "budget_allocated_cr": 37.32,
+    "percent_complete": 98.0,
+    "months_elapsed": 53,
+    "planned_duration_months": 53,
+    "risk_score": 0.2,
+    "risk_brief": "Irrigation project 33 is currently low-risk (0.2%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Physical progress",
+        "impact": -4.358
+      },
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": -1.1493
+      },
+      {
+        "feature": "Schedule pressure",
+        "impact": 0.5515
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00034",
+    "project_name": "State highways project 34",
+    "ministry": "Road Transport & Highways",
+    "sector": "State highways",
+    "budget_allocated_cr": 90.04,
+    "percent_complete": 66.1,
+    "months_elapsed": 22,
+    "planned_duration_months": 16,
+    "risk_score": 99.3,
+    "risk_brief": "State highways project 34 is at 99.3% risk. This is primarily driven by progress falling well behind schedule expectations, slow physical completion, and high schedule pressure. Immediate review is recommended.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": 4.2476
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 1.1261
+      },
+      {
+        "feature": "Schedule pressure",
+        "impact": 0.82
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00035",
+    "project_name": "Smart city infra project 35",
+    "ministry": "Housing & Urban Affairs",
+    "sector": "Smart city infra",
+    "budget_allocated_cr": 272.59,
+    "percent_complete": 55.3,
+    "months_elapsed": 33,
+    "planned_duration_months": 46,
+    "risk_score": 93.9,
+    "risk_brief": "Smart city infra project 35 is at 93.9% risk. This is primarily driven by progress falling behind schedule expectations, slow physical completion, and its classification under Housing & Urban Affairs. Immediate review is recommended.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": 1.6408
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 1.1583
+      },
+      {
+        "feature": "Ministry: Housing & Urban Affairs",
+        "impact": 0.7129
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00036",
+    "project_name": "Bridges project 36",
+    "ministry": "Road Transport & Highways",
+    "sector": "Bridges",
+    "budget_allocated_cr": 68.79,
+    "percent_complete": 39.5,
+    "months_elapsed": 20,
+    "planned_duration_months": 84,
+    "risk_score": 80.9,
+    "risk_brief": "Bridges project 36 is at 80.9% risk. This is primarily driven by its classification under Bridges and slow physical completion. Immediate review is recommended.",
+    "risk_reasons": [
+      {
+        "feature": "Sector: Bridges",
+        "impact": 1.6125
+      },
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": -1.4465
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 0.9828
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00037",
+    "project_name": "Smart city infra project 37",
+    "ministry": "Housing & Urban Affairs",
+    "sector": "Smart city infra",
+    "budget_allocated_cr": 44.26,
+    "percent_complete": 35.3,
+    "months_elapsed": 20,
+    "planned_duration_months": 75,
+    "risk_score": 53.4,
+    "risk_brief": "Smart city infra project 37 is at 53.4% risk. This is primarily driven by slow physical completion and its classification under Housing & Urban Affairs. Immediate review is recommended.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": -2.1904
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 0.9745
+      },
+      {
+        "feature": "Ministry: Housing & Urban Affairs",
+        "impact": 0.9683
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00038",
+    "project_name": "Refineries project 38",
+    "ministry": "Petroleum & Natural Gas",
+    "sector": "Refineries",
+    "budget_allocated_cr": 6.52,
+    "percent_complete": 27.1,
+    "months_elapsed": 66,
+    "planned_duration_months": 70,
+    "risk_score": 99.8,
+    "risk_brief": "Refineries project 38 is at 99.8% risk. This is primarily driven by progress falling well behind schedule expectations, slow physical completion, and high schedule pressure. Immediate review is recommended.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": 4.6621
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 1.6778
+      },
+      {
+        "feature": "Schedule pressure",
+        "impact": 0.4777
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00039",
+    "project_name": "Metro rail project 39",
+    "ministry": "Railways",
+    "sector": "Metro rail",
+    "budget_allocated_cr": 26.31,
+    "percent_complete": 45.9,
+    "months_elapsed": 24,
+    "planned_duration_months": 29,
+    "risk_score": 99.7,
+    "risk_brief": "Metro rail project 39 is at 99.7% risk. This is primarily driven by progress falling well behind schedule expectations, slow physical completion, and the scale of its budget allocation. Immediate review is recommended.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": 4.2063
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 1.9859
+      },
+      {
+        "feature": "Budget allocated",
+        "impact": 0.2512
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00040",
+    "project_name": "Irrigation project 40",
+    "ministry": "Jal Shakti",
+    "sector": "Irrigation",
+    "budget_allocated_cr": 392.47,
+    "percent_complete": 82.1,
+    "months_elapsed": 57,
+    "planned_duration_months": 83,
+    "risk_score": 0.3,
+    "risk_brief": "Irrigation project 40 is currently low-risk (0.3%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": -2.7184
+      },
+      {
+        "feature": "Physical progress",
+        "impact": -0.8754
+      },
+      {
+        "feature": "Schedule pressure",
+        "impact": -0.6267
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00041",
+    "project_name": "Optical fibre network project 41",
+    "ministry": "Telecommunications",
+    "sector": "Optical fibre network",
+    "budget_allocated_cr": 23.8,
+    "percent_complete": 45.4,
+    "months_elapsed": 24,
+    "planned_duration_months": 66,
+    "risk_score": 2.7,
+    "risk_brief": "Optical fibre network project 41 is currently low-risk (2.7%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": -2.9471
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 1.0697
+      },
+      {
+        "feature": "Schedule pressure",
+        "impact": -0.433
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00042",
+    "project_name": "Solar parks project 42",
+    "ministry": "New & Renewable Energy",
+    "sector": "Solar parks",
+    "budget_allocated_cr": 43.18,
+    "percent_complete": 69.5,
+    "months_elapsed": 33,
+    "planned_duration_months": 58,
+    "risk_score": 1.2,
+    "risk_brief": "Solar parks project 42 is currently low-risk (1.2%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": -3.1151
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 0.3816
+      },
+      {
+        "feature": "Last report gap",
+        "impact": -0.1981
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00043",
+    "project_name": "Irrigation project 43",
+    "ministry": "Jal Shakti",
+    "sector": "Irrigation",
+    "budget_allocated_cr": 1052.37,
+    "percent_complete": 34.6,
+    "months_elapsed": 15,
+    "planned_duration_months": 77,
+    "risk_score": 3.0,
+    "risk_brief": "Irrigation project 43 is currently low-risk (3%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": -1.7824
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 0.7379
+      },
+      {
+        "feature": "Budget utilization pace",
+        "impact": -0.4236
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00044",
+    "project_name": "Airport terminals project 44",
+    "ministry": "Civil Aviation",
+    "sector": "Airport terminals",
+    "budget_allocated_cr": 48.98,
+    "percent_complete": 61.3,
+    "months_elapsed": 12,
+    "planned_duration_months": 18,
+    "risk_score": 2.1,
+    "risk_brief": "Airport terminals project 44 is currently low-risk (2.1%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": -2.164
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 0.472
+      },
+      {
+        "feature": "Time elapsed",
+        "impact": -0.2613
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00045",
+    "project_name": "Rail track doubling project 45",
+    "ministry": "Railways",
+    "sector": "Rail track doubling",
+    "budget_allocated_cr": 556.76,
+    "percent_complete": 73.8,
+    "months_elapsed": 16,
+    "planned_duration_months": 32,
+    "risk_score": 93.8,
+    "risk_brief": "Rail track doubling project 45 is at 93.8% risk. This is primarily driven by progress falling well behind schedule expectations, slow physical completion, and its classification under Railways. Immediate review is recommended.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": 2.5483
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 0.5936
+      },
+      {
+        "feature": "Ministry: Railways",
+        "impact": 0.2282
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00046",
+    "project_name": "Irrigation canals project 46",
+    "ministry": "Agriculture",
+    "sector": "Irrigation canals",
+    "budget_allocated_cr": 112.9,
+    "percent_complete": 41.0,
+    "months_elapsed": 35,
+    "planned_duration_months": 20,
+    "risk_score": 99.8,
+    "risk_brief": "Irrigation canals project 46 is at 99.8% risk. This is primarily driven by progress falling well behind schedule expectations, slow physical completion, and high schedule pressure. Immediate review is recommended.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": 4.5553
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 1.8974
+      },
+      {
+        "feature": "Schedule pressure",
+        "impact": 0.9817
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00047",
+    "project_name": "Refineries project 47",
+    "ministry": "Petroleum & Natural Gas",
+    "sector": "Refineries",
+    "budget_allocated_cr": 77.29,
+    "percent_complete": 67.1,
+    "months_elapsed": 32,
+    "planned_duration_months": 71,
+    "risk_score": 9.8,
+    "risk_brief": "Refineries project 47 is currently low-risk (9.8%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Last report gap",
+        "impact": -0.5555
+      },
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": -0.4064
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 0.2541
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00048",
+    "project_name": "Port development project 48",
+    "ministry": "Shipping",
+    "sector": "Port development",
+    "budget_allocated_cr": 118.05,
+    "percent_complete": 29.2,
+    "months_elapsed": 23,
+    "planned_duration_months": 82,
+    "risk_score": 1.9,
+    "risk_brief": "Port development project 48 is currently low-risk (1.9%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": -2.7404
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 0.6418
+      },
+      {
+        "feature": "Ministry: Shipping",
+        "impact": -0.3791
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00049",
+    "project_name": "National highways project 49",
+    "ministry": "Road Transport & Highways",
+    "sector": "National highways",
+    "budget_allocated_cr": 30.99,
+    "percent_complete": 98.0,
+    "months_elapsed": 52,
+    "planned_duration_months": 26,
+    "risk_score": 0.1,
+    "risk_brief": "National highways project 49 is currently low-risk (0.1%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Physical progress",
+        "impact": -7.4587
+      },
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": 1.7799
+      },
+      {
+        "feature": "Schedule pressure",
+        "impact": 0.5921
+      }
+    ]
+  },
+  {
+    "project_id": "PRJ-00050",
+    "project_name": "Irrigation canals project 50",
+    "ministry": "Agriculture",
+    "sector": "Irrigation canals",
+    "budget_allocated_cr": 29.41,
+    "percent_complete": 73.2,
+    "months_elapsed": 66,
+    "planned_duration_months": 80,
+    "risk_score": 8.6,
+    "risk_brief": "Irrigation canals project 50 is currently low-risk (8.6%), tracking close to or ahead of its expected schedule.",
+    "risk_reasons": [
+      {
+        "feature": "Progress vs schedule expectation",
+        "impact": -0.9286
+      },
+      {
+        "feature": "Budget utilization pace",
+        "impact": -0.2996
+      },
+      {
+        "feature": "Physical progress",
+        "impact": 0.2269
+      }
+    ]
+  }
+]
