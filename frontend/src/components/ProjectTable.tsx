@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import type { Project } from '../api/client';
-import { getRiskBadgeClasses, getRiskLabel } from '../utils/formatters';
+import { getRiskBadgeClasses, getRiskTier } from '../utils/formatters';
 
 interface ProjectTableProps {
   projects: Project[];
@@ -117,16 +117,16 @@ export const ProjectTable: React.FC<ProjectTableProps> = ({
             </button>
             <button
               onClick={() => {
-                setMinRiskFilter(65);
+                setMinRiskFilter(66);
                 setCurrentPage(1);
               }}
               className={`px-2.5 py-1 text-[11px] rounded-[1px] transition-colors ${
-                minRiskFilter >= 65
+                minRiskFilter >= 66
                   ? 'bg-[#ef4444]/20 text-[#ef4444] font-medium border border-[#ef4444]/30'
                   : 'text-[#888888] hover:text-[#ef4444]'
               }`}
             >
-              High Risk (≥65%)
+              High Risk (≥66%)
             </button>
           </div>
         </div>
@@ -178,7 +178,7 @@ export const ProjectTable: React.FC<ProjectTableProps> = ({
             ) : (
               paginatedProjects.map((p) => {
                 const badgeClass = getRiskBadgeClasses(p.risk_score);
-                const label = getRiskLabel(p.risk_score);
+                const classification = getRiskTier(p.risk_score);
 
                 return (
                   <tr
@@ -214,7 +214,7 @@ export const ProjectTable: React.FC<ProjectTableProps> = ({
                       </span>
                     </td>
                     <td className="py-2.5 px-4 text-right text-[11px] font-medium text-[#888888] hidden lg:table-cell">
-                      {label}
+                      {classification}
                     </td>
                   </tr>
                 );

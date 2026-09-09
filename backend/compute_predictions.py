@@ -174,8 +174,8 @@ for i, row in df.iterrows():
 with open("predictions.json", "w") as f:
     json.dump(results, f, indent=2)
 
-high_risk = sum(1 for r in results if r["risk_score"] > 65)
+high_risk = sum(1 for r in results if r["risk_score"] >= 66)
 print(f"Scored {len(results)} projects -> predictions.json")
-print(f"High risk (>65%): {high_risk}")
+print(f"High risk (>=66%): {high_risk}")
 print("\nSample project:")
 print(json.dumps(results[0], indent=2))

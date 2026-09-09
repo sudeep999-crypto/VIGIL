@@ -74,7 +74,7 @@ def build_summary_block() -> dict:
             "ministry": m,
             "project_count": len(scores),
             "avg_risk": round(sum(scores) / len(scores), 1),
-            "high_risk_count": sum(1 for s in scores if s >= 65),
+            "high_risk_count": sum(1 for s in scores if s >= 66),
         }
         for m, scores in by_ministry.items()
     ]
@@ -96,7 +96,7 @@ def build_summary_block() -> dict:
 
     return {
         "total_projects": len(PROJECTS),
-        "total_high_risk": sum(1 for p in PROJECTS if p["risk_score"] >= 65),
+        "total_high_risk": sum(1 for p in PROJECTS if p["risk_score"] >= 66),
         "avg_risk_score": overall_avg,
         "ministries": ministries_rollup,
         "top_10_highest_risk": top_10_list,
@@ -170,7 +170,7 @@ def list_projects(ministry: str | None = None, min_risk: float | None = None):
     """
     Returns all projects, optionally filtered.
     ?ministry=Power           -> only Power ministry projects
-    ?min_risk=65              -> only projects at or above 65% risk
+    ?min_risk=66              -> only projects at or above 66% risk
     """
     results = PROJECTS
     if ministry:
@@ -204,7 +204,7 @@ def summary():
             "ministry": ministry,
             "project_count": len(scores),
             "avg_risk": round(sum(scores) / len(scores), 1),
-            "high_risk_count": sum(1 for s in scores if s >= 65),
+            "high_risk_count": sum(1 for s in scores if s >= 66),
         }
         for ministry, scores in by_ministry.items()
     ]
@@ -212,7 +212,7 @@ def summary():
 
     return {
         "total_projects": len(PROJECTS),
-        "total_high_risk": sum(1 for p in PROJECTS if p["risk_score"] >= 65),
+        "total_high_risk": sum(1 for p in PROJECTS if p["risk_score"] >= 66),
         "ministries": rollup,
     }
 

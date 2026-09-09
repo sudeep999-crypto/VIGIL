@@ -6,7 +6,7 @@ export const FALLBACK_SUMMARY: SummaryResponse = {
   total_projects: 50,
   total_high_risk: 18,
   ministries: [
-    { ministry: 'Railways', project_count: 180, avg_risk: 37.9, high_risk_count: 66 },
+    { ministry: 'Railways', project_count: 180, avg_risk: 37.9, high_risk_count: 65 },
     { ministry: 'Petroleum & Natural Gas', project_count: 173, avg_risk: 33.6, high_risk_count: 55 },
     { ministry: 'Telecommunications', project_count: 96, avg_risk: 31.8, high_risk_count: 29 },
     { ministry: 'Housing & Urban Affairs', project_count: 167, avg_risk: 31.2, high_risk_count: 45 },
@@ -15,7 +15,7 @@ export const FALLBACK_SUMMARY: SummaryResponse = {
     { ministry: 'Road Transport & Highways', project_count: 254, avg_risk: 27.8, high_risk_count: 64 },
     { ministry: 'Jal Shakti', project_count: 195, avg_risk: 27.4, high_risk_count: 48 },
     { ministry: 'Coal', project_count: 103, avg_risk: 27.0, high_risk_count: 25 },
-    { ministry: 'Power', project_count: 177, avg_risk: 26.6, high_risk_count: 44 },
+    { ministry: 'Power', project_count: 177, avg_risk: 26.6, high_risk_count: 43 },
     { ministry: 'Agriculture', project_count: 87, avg_risk: 26.4, high_risk_count: 22 },
     { ministry: 'Shipping', project_count: 82, avg_risk: 24.2, high_risk_count: 19 },
     { ministry: 'Rural Development', project_count: 96, avg_risk: 24.2, high_risk_count: 22 },

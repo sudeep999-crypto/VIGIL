@@ -62,7 +62,7 @@ export const MinistryHeatmap: React.FC<MinistryHeatmapProps> = ({
             <span className="w-2 h-2 rounded-[1px] bg-[#22c55e]"></span> 0–35 Low
           </span>
           <span className="inline-flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-[1px] bg-[#eab308]"></span> 36–65 Mid
+            <span className="w-2 h-2 rounded-[1px] bg-[#eab308]"></span> 36–65 Medium
           </span>
           <span className="inline-flex items-center gap-1.5">
             <span className="w-2 h-2 rounded-[1px] bg-[#ef4444]"></span> 66–100 High

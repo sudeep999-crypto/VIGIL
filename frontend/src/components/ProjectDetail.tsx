@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import type { Project } from '../api/client';
-import { getRiskColor, getRiskLabel } from '../utils/formatters';
+import { getRiskColor, getRiskTier } from '../utils/formatters';
 
 interface ProjectDetailProps {
   project: Project;
@@ -11,7 +11,7 @@ interface ProjectDetailProps {
 
 export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
   const riskColor = getRiskColor(project.risk_score);
-  const riskLabel = getRiskLabel(project.risk_score);
+  const riskTier = getRiskTier(project.risk_score);
 
   // SVG Gauge calculations
   const radius = 86;
@@ -99,7 +99,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
                 className="text-[11px] font-semibold uppercase tracking-widest mt-2"
                 style={{ color: riskColor }}
               >
-                {riskLabel}
+                {riskTier}
               </span>
             </div>
           </div>

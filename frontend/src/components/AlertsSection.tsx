@@ -1,6 +1,7 @@
 import React from 'react';
 import type { AlertItem } from '../api/client';
 import { AlertTriangle, ChevronRight } from 'lucide-react';
+import { getRiskBadgeClasses, getRiskTier } from '../utils/formatters';
 
 interface AlertsSectionProps {
   alerts: AlertItem[];
@@ -39,8 +40,8 @@ export const AlertsSection: React.FC<AlertsSectionProps> = ({
                 <span className="font-mono text-xs font-semibold text-[#e8e8e8] group-hover:text-[#3b82f6]">
                   {item.project_id}
                 </span>
-                <span className="font-mono text-xs font-semibold text-[#ef4444] bg-[#ef4444]/15 border border-[#ef4444]/40 px-1.5 py-0.2 rounded-[2px]">
-                  {item.risk_score.toFixed(1)}%
+                <span className={`font-mono text-xs font-semibold px-1.5 py-0.5 rounded-[2px] border ${getRiskBadgeClasses(item.risk_score)}`}>
+                  {getRiskTier(item.risk_score)} · {item.risk_score.toFixed(1)}%
                 </span>
               </div>
               <p className="text-xs font-medium text-[#e8e8e8] mt-1.5 line-clamp-1">
