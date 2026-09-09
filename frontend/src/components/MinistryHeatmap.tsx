@@ -1,12 +1,15 @@
 import React from 'react';
 import { motion, type Variants } from 'framer-motion';
 import type { MinistryRollup } from '../api/client';
+import type { RiskTier } from '../utils/formatters';
 import { getHeatmapTileClasses } from '../utils/formatters';
 
 interface MinistryHeatmapProps {
   ministries: MinistryRollup[];
   selectedMinistry: string | null;
   onSelectMinistry: (ministry: string | null) => void;
+  selectedRiskTier?: RiskTier | null;
+  onSelectRiskTier?: (tier: RiskTier | null) => void;
   loading?: boolean;
 }
 
@@ -37,6 +40,8 @@ export const MinistryHeatmap: React.FC<MinistryHeatmapProps> = ({
   ministries,
   selectedMinistry,
   onSelectMinistry,
+  selectedRiskTier = null,
+  onSelectRiskTier,
   loading = false,
 }) => {
   return (
@@ -57,16 +62,52 @@ export const MinistryHeatmap: React.FC<MinistryHeatmapProps> = ({
           )}
         </div>
 
-        <div className="flex items-center gap-4 text-xs font-mono text-[#888888]">
-          <span className="inline-flex items-center gap-1.5">
+        <div className="flex items-center gap-2 text-xs font-mono text-[#888888]">
+          <button
+            type="button"
+            onClick={() => onSelectRiskTier?.(selectedRiskTier === 'Low' ? null : 'Low')}
+            title="Filter table by Low Risk (0–35%)"
+            className={`inline-flex items-center gap-1.5 px-2 py-1 rounded-[2px] transition-all cursor-pointer border ${
+              selectedRiskTier === 'Low'
+                ? 'bg-[#22c55e]/15 border-[#22c55e]/50 text-[#22c55e] font-semibold shadow-[0_0_8px_rgba(34,197,94,0.25)]'
+                : 'border-transparent hover:border-[#2a2a2a] hover:text-[#e8e8e8]'
+            }`}
+          >
             <span className="w-2 h-2 rounded-[1px] bg-[#22c55e]"></span> 0–35 Low
-          </span>
-          <span className="inline-flex items-center gap-1.5">
+          </button>
+          <button
+            type="button"
+            onClick={() => onSelectRiskTier?.(selectedRiskTier === 'Medium' ? null : 'Medium')}
+            title="Filter table by Medium Risk (36–65%)"
+            className={`inline-flex items-center gap-1.5 px-2 py-1 rounded-[2px] transition-all cursor-pointer border ${
+              selectedRiskTier === 'Medium'
+                ? 'bg-[#eab308]/15 border-[#eab308]/50 text-[#eab308] font-semibold shadow-[0_0_8px_rgba(234,179,8,0.25)]'
+                : 'border-transparent hover:border-[#2a2a2a] hover:text-[#e8e8e8]'
+            }`}
+          >
             <span className="w-2 h-2 rounded-[1px] bg-[#eab308]"></span> 36–65 Medium
-          </span>
-          <span className="inline-flex items-center gap-1.5">
+          </button>
+          <button
+            type="button"
+            onClick={() => onSelectRiskTier?.(selectedRiskTier === 'High' ? null : 'High')}
+            title="Filter table by High Risk (66–100%)"
+            className={`inline-flex items-center gap-1.5 px-2 py-1 rounded-[2px] transition-all cursor-pointer border ${
+              selectedRiskTier === 'High'
+                ? 'bg-[#ef4444]/15 border-[#ef4444]/50 text-[#ef4444] font-semibold shadow-[0_0_8px_rgba(239,68,68,0.25)]'
+                : 'border-transparent hover:border-[#2a2a2a] hover:text-[#e8e8e8]'
+            }`}
+          >
             <span className="w-2 h-2 rounded-[1px] bg-[#ef4444]"></span> 66–100 High
-          </span>
+          </button>
+          {selectedRiskTier && (
+            <button
+              type="button"
+              onClick={() => onSelectRiskTier?.(null)}
+              className="text-[11px] text-[#3b82f6] hover:underline ml-1 cursor-pointer"
+            >
+              (Clear tier)
+            </button>
+          )}
         </div>
       </div>
 

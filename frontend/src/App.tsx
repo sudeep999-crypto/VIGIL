@@ -19,6 +19,7 @@ import type {
   MinistryRollup,
   AlertItem,
 } from './api/client';
+import type { RiskTier } from './utils/formatters';
 import {
   FALLBACK_SUMMARY,
   FALLBACK_ALERTS,
@@ -32,6 +33,7 @@ export default function App() {
 
   // Filter state
   const [selectedMinistry, setSelectedMinistry] = useState<string | null>(null);
+  const [selectedRiskTier, setSelectedRiskTier] = useState<RiskTier | null>(null);
 
   // Connection and fallback tracking
   const [isUsingFallback, setIsUsingFallback] = useState<boolean>(false);
@@ -103,6 +105,16 @@ export default function App() {
   useEffect(() => {
     loadData();
   }, []);
+
+  const handleSelectRiskTier = (tier: RiskTier | null) => {
+    setSelectedRiskTier(tier);
+    if (tier) {
+      const el = document.getElementById('project-risk-register');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
 
   // Handle selecting a project
   const handleSelectProject = async (projectId: string) => {
@@ -201,6 +213,8 @@ export default function App() {
                 ministries={summaryData.ministries}
                 selectedMinistry={selectedMinistry}
                 onSelectMinistry={setSelectedMinistry}
+                selectedRiskTier={selectedRiskTier}
+                onSelectRiskTier={handleSelectRiskTier}
                 loading={loading}
               />
 
@@ -209,6 +223,8 @@ export default function App() {
                 projects={projects}
                 selectedMinistry={selectedMinistry}
                 onSelectMinistry={setSelectedMinistry}
+                selectedRiskTier={selectedRiskTier}
+                onSelectRiskTier={setSelectedRiskTier}
                 onSelectProject={handleSelectProject}
                 loading={loading}
               />

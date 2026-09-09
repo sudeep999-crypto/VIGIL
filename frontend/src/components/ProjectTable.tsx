@@ -1,11 +1,14 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import type { Project } from '../api/client';
+import type { RiskTier } from '../utils/formatters';
 import { getRiskBadgeClasses, getRiskTier } from '../utils/formatters';
 
 interface ProjectTableProps {
   projects: Project[];
   selectedMinistry: string | null;
   onSelectMinistry: (ministry: string | null) => void;
+  selectedRiskTier?: RiskTier | null;
+  onSelectRiskTier?: (tier: RiskTier | null) => void;
   onSelectProject: (projectId: string) => void;
   loading?: boolean;
 }
@@ -16,12 +19,18 @@ export const ProjectTable: React.FC<ProjectTableProps> = ({
   projects,
   selectedMinistry,
   onSelectMinistry,
+  selectedRiskTier = null,
+  onSelectRiskTier,
   onSelectProject,
   loading = false,
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [minRiskFilter, setMinRiskFilter] = useState<number>(0);
   const [currentPage, setCurrentPage] = useState(1);
+
+  // Reset pagination when external risk tier filter changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedRiskTier]);
 
   // Extract unique ministry list from projects
   const ministries = useMemo(() => {
@@ -40,10 +49,10 @@ export const ProjectTable: React.FC<ProjectTableProps> = ({
         p.project_name.toLowerCase().includes(q) ||
         p.sector.toLowerCase().includes(q);
       const matchesMinistry = !selectedMinistry || p.ministry === selectedMinistry;
-      const matchesRisk = p.risk_score >= minRiskFilter;
+      const matchesRisk = !selectedRiskTier || getRiskTier(p.risk_score) === selectedRiskTier;
       return matchesSearch && matchesMinistry && matchesRisk;
     });
-  }, [projects, searchQuery, selectedMinistry, minRiskFilter]);
+  }, [projects, searchQuery, selectedMinistry, selectedRiskTier]);
 
   const totalPages = Math.ceil(filteredProjects.length / PAGE_SIZE) || 1;
   const paginatedProjects = useMemo(() => {
@@ -58,12 +67,31 @@ export const ProjectTable: React.FC<ProjectTableProps> = ({
   };
 
   return (
-    <section className="pt-8 pb-16 border-t border-[#2a2a2a]">
+    <section id="project-risk-register" className="pt-8 pb-16 border-t border-[#2a2a2a] scroll-mt-20">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-4">
         <div>
-          <span className="text-xs font-semibold uppercase tracking-wider text-[#888888]">
-            Project Risk Register
-          </span>
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-semibold uppercase tracking-wider text-[#888888]">
+              Project Risk Register
+            </span>
+            {selectedRiskTier && (
+              <span
+                className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-[2px] text-[11px] font-medium border ${getRiskBadgeClasses(
+                  selectedRiskTier === 'High' ? 80 : selectedRiskTier === 'Medium' ? 50 : 20
+                )}`}
+              >
+                Showing: {selectedRiskTier} Risk ({selectedRiskTier === 'High' ? '66–100%' : selectedRiskTier === 'Medium' ? '36–65%' : '0–35%'})
+                <button
+                  type="button"
+                  onClick={() => onSelectRiskTier?.(null)}
+                  className="hover:opacity-75 cursor-pointer font-bold ml-0.5"
+                  title="Clear risk tier filter"
+                >
+                  ×
+                </button>
+              </span>
+            )}
+          </div>
           <p className="text-xs text-[#888888] mt-0.5">
             Showing {filteredProjects.length} of {projects.length} evaluated infrastructure projects
           </p>
@@ -100,15 +128,16 @@ export const ProjectTable: React.FC<ProjectTableProps> = ({
             </select>
           </div>
 
-          {/* High Risk Filter Toggle */}
+          {/* Risk Tier Filter Toggle */}
           <div className="flex items-center gap-1 bg-neutral-900/60 backdrop-blur-md border border-white/10 rounded-[2px] p-0.5 shadow-sm">
             <button
+              type="button"
               onClick={() => {
-                setMinRiskFilter(0);
+                onSelectRiskTier?.(null);
                 setCurrentPage(1);
               }}
-              className={`px-2.5 py-1 text-[11px] rounded-[1px] transition-colors ${
-                minRiskFilter === 0
+              className={`px-2.5 py-1 text-[11px] rounded-[1px] transition-colors cursor-pointer ${
+                !selectedRiskTier
                   ? 'bg-[#1a1a1a] text-[#e8e8e8] font-medium'
                   : 'text-[#888888] hover:text-[#e8e8e8]'
               }`}
@@ -116,17 +145,46 @@ export const ProjectTable: React.FC<ProjectTableProps> = ({
               All
             </button>
             <button
+              type="button"
               onClick={() => {
-                setMinRiskFilter(66);
+                onSelectRiskTier?.(selectedRiskTier === 'Low' ? null : 'Low');
                 setCurrentPage(1);
               }}
-              className={`px-2.5 py-1 text-[11px] rounded-[1px] transition-colors ${
-                minRiskFilter >= 66
+              className={`px-2 py-1 text-[11px] rounded-[1px] transition-colors cursor-pointer ${
+                selectedRiskTier === 'Low'
+                  ? 'bg-[#22c55e]/20 text-[#22c55e] font-medium border border-[#22c55e]/30'
+                  : 'text-[#888888] hover:text-[#22c55e]'
+              }`}
+            >
+              Low (0–35)
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                onSelectRiskTier?.(selectedRiskTier === 'Medium' ? null : 'Medium');
+                setCurrentPage(1);
+              }}
+              className={`px-2 py-1 text-[11px] rounded-[1px] transition-colors cursor-pointer ${
+                selectedRiskTier === 'Medium'
+                  ? 'bg-[#eab308]/20 text-[#eab308] font-medium border border-[#eab308]/30'
+                  : 'text-[#888888] hover:text-[#eab308]'
+              }`}
+            >
+              Medium (36–65)
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                onSelectRiskTier?.(selectedRiskTier === 'High' ? null : 'High');
+                setCurrentPage(1);
+              }}
+              className={`px-2 py-1 text-[11px] rounded-[1px] transition-colors cursor-pointer ${
+                selectedRiskTier === 'High'
                   ? 'bg-[#ef4444]/20 text-[#ef4444] font-medium border border-[#ef4444]/30'
                   : 'text-[#888888] hover:text-[#ef4444]'
               }`}
             >
-              High Risk (≥66%)
+              High (≥66%)
             </button>
           </div>
         </div>
